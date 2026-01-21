@@ -1,0 +1,333 @@
+/* ضبط حجم الصندوق لجميع العناصر  */
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+/*  اعدادات الجسمم الاساسية (body) */
+body{
+font-family: Arial, Helvetica, sans-serif;/* انواع الخطوط*/
+line-height: 1.6;/*ارتفاع السطر*/
+background-color: #f4f4f9;/* لون الخلفية */
+direction: rtl;/*  دعم اللغة العربية */
+padding-bottom: 70px;/* مسافة سفلية لاجل ال footer الثابت (اذا لزم) */
+}
+
+/*تنسيق الروابط الافتراضي*/
+a{
+color: #007bff;
+text-decoration: none;/* ازالة الخطوط الافتراضية*/
+}
+
+/*تنسيق ال(header)*/
+header{
+background: #333;
+padding: 1em 0;
+text-align: center;
+}
+
+/*قائمة التنقل nav*/
+nav{
+background: #444;
+color: #fff;
+padding: 0.5rem 0;
+}
+
+nav ul{
+list-style: none;
+text-align: center;
+}
+ 
+nav ul li a{
+color: #fff;
+padding: 8px 15px;
+display: inline-block;
+}
+
+nav ul li a:hover{
+background: #555;
+border-radius: 5px;
+}
+
+/*تنسيق ال (main)*/
+main{
+padding: 20px;
+}
+
+/*تنسيق ال(footer)*/
+footer{
+text-align: center;
+padding: 10px;
+background: #333;
+color: #fff;
+position: fixed;/*تثبيت الفواتير ليكون دائما مرئيا*/
+bottom: 0;
+width: 100%;
+}
+
+
+
+
+/*تنسيقات خاصة لصفحة {singup.html}*/
+/*استخدام flexbox لتنظيم حقول النموذج*/
+/*{المتطلب 7}*/
+form{
+max-width: 400px;
+margin: 40px auto;/*توسيع النموذج في المنتصف*/
+padding: 20px;
+background: #fff;
+border-radius: 8px;
+box-shadow: 0010px rgba(0,0 ,0, 1);
+
+/*استخدام flexbox  في صف لتنظيم حقول النموذج*/
+/** تطبيق flaexbox هنا المتطلب (المتطلب 7)**/
+display: flex;
+flex-direction: column-reverse;/*تريب العناصر عموديا*/
+gap: 15px;/*مسافة بين العناصر*/
+}
+
+/*تنسيقات حقول الادخال*/
+input[type="text"],input[type="emaih"],input[type="password"]
+{
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+button[type="submit"]{
+background-color: #28a745;
+color: white;
+page-break-after: 10px 15px;
+border: none;
+border-radius: 4px;
+cursor: pointer;/* نحويل المؤشر */
+font-size: 1.1em;
+}
+
+button[type="submit"]:hover{
+    background-color: #218838;
+}
+
+
+/* لجعلها تتكدس فوق بعضها تطبيق media queries*/
+.main-content-container{
+display: flex;  /*  العرض*/
+justify-content: space-around; 
+flex-wrap: wrap; /*لسماح العناصر بالنزول*/
+}
+main section{
+flex: 1;/* لجعل الاقسام متساوية بالعرض*/
+min-width: 300px;
+margin: 10px;
+padding: 15px;
+background-color: #fff;
+border: 1px solid #ddd;
+border: 5px;
+}
+/**هنا المتطلب {المتطلب 8}**/
+/*التنسيق الذي سوف يطبق عندما يكون عرض الشاشة اقل من 600 px*/
+main section{
+    min-width: 100%;
+    margin: 10px0;
+}
+
+/*لجعل قائمة التنقل تظهر بشكل عمودي*/
+nav ul li{
+display: block;
+text-align: center;
+padding: 5px 0;
+}
+
+/* تنسيقات صفحة ال books  */
+/* دمج تنسيقات الخط والاتجاة لكافة العناصر */
+body,header,nav,footer{
+direction: rtl;
+font-family: sans-serif;
+margin: 0;
+text-align: center;
+}
+/*دمج تنسيق الخلفيات و الالوان للعناصر الهيكلية المتطلب 2 */
+header,footer,nav{
+background: #333;
+color:#fff;
+padding: 15px;  
+}
+/* متطلب 1 استخدام flexbox لتنظيم القائمة والمحتوى الاساسي */
+nav ul,main{
+display: flex;
+flex-wrap: wrap;
+/*justify-content: #fff;  */
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+/* تحديد حصة كل قسم في المساحة باستخدام flex 1 */
+/* قسم الصور */
+section{
+flex: 3;
+min-width: 300px;
+}
+/*قسم الفيديو*/
+aside{
+flex: 1px;
+min-width: 200px;
+}
+/* تنسيق موحد للوسائط لضمان عدم خروجها من الاطار */
+video,img{
+max-width: 100%;
+height: auto;
+border-radius: 5px;
+}
+/*دمج تنسيق الروابط في مكان واحد */
+nav a{
+color: #fff;
+text-decoration: none;
+padding: 5px 15px;
+}
+/*   جعل الموقع متجاوب*/
+@media(max-width:700px){
+main{
+
+flex-direction: column;  /* تحويل الاعمدة لصفوف في الشاشة الصغيرة  */
+}}
+
+
+/*  صفحة about*/
+/*  تنسيق عام واختصار للعناصر المتكررة*/
+body,header,footer,nav{
+    direction: rtl;
+    font-family: sans-serif;
+    margin: 0;
+    text-align: center;
+    }
+    header,footer,nav{
+    background:#333 ;
+    color: white;
+    padding: 15px;
+    }
+    
+    /*   المتطلب 7تطبيق ال fexbox*/
+    nav ul,main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 20px;
+    }
+    /*  تنسيق اقسام الصفحات كحاوية مرنة */
+    section{
+    flex: 1;
+    min-width: 300px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    }
+    img{
+    max-width: 300px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px (0,0,0,0.1);
+    }
+    /*  المتطلب 8 */
+    @media(max-width:768px){
+    main{
+     flex-direction: column; 
+     align-items: center;  
+    }
+    
+    }
+
+    /*  الصفحة الاخيرة */
+    /*  1,3 تنسيقات عام وسريع للخطوط والجداول */
+    body{direction: rtl;
+font-family: sans-serif;
+background: #f8f9fa;   
+}
+table{
+width: 100%;
+border-collapse: collapse;
+}
+/* المتطلب 7 تطبيق flexbox لتنظيم المحتوى 
+(صفحة واحدة على الاقل)
+*/
+main{ display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+}
+/*  المتطلب 8 جعل الموقع responsive باستخدام media queries*/
+@media(max-width:768px){
+main{
+ flex-direction: column; 
+ align-items: center; 
+}
+}
+/*  تنسيق اضافي بسيط للصورة و الايقونات*/
+img, .author-img{
+max-width: 88%;
+height:auto ;
+border-radius: 5px;
+}
+i{
+margin: 0 10px;
+cursor:pointer;
+
+}
+
+
+
+
+/* أ. استخدام CSS Variables و CSS Grid لمعرض الصور: */
+/* تعريف المتغيرات - CSS Variables */
+:root {
+    --main-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-white: #ffffff;
+    --transition-speed: 0.3s;
+}
+
+/* استخدام Grid لمعرض الصور (Gallery) */
+.ws-images ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    list-style: none;
+    padding: 20px;
+}
+
+/* إضافة تأثيرات Hover و Transitions */
+.ws-images img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+.ws-images img:hover {
+    transform: scale(1.05); /* تكبير الصورة عند مرور الماوس */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* ب. التجاوب عبر Media Queries (يدوياً): */
+/* للهواتف المحمولة */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* للأجهزة اللوحية (تابلت) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    main {
+        padding: 10px;
+    }
+}
